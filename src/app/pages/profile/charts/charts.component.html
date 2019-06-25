@@ -1,0 +1,18 @@
+<div>
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType">
+          
+    </canvas>
+    <ul>
+      <li *ngFor="let mypoints of points | async">
+        {{ mypoints.wpm}}
+      </li>
+    </ul>
+  </div>
+
+</div>

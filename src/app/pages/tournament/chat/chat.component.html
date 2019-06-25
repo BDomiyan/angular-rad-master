@@ -1,0 +1,32 @@
+
+<div class="container-fluid body">
+    <div class="row chatarea">
+        <div class="nopadding chatbox">
+            <h1 class='chattitle'>Race Chat</h1>  
+            <div class="chatmessages"  >
+                <div *ngFor="let msg of msgList">
+                    <div class="speech-bubble1" *ngIf="thisUserId == msg.userId">
+                        <div class="messages">{{msg.msg}}</div>
+                    </div>
+
+                    <div class="speech-bubble2" *ngIf="thisUserId != msg.userId">
+                        <div class="chatuser2">{{msg.userName}}</div>
+                        <div class="messages">{{msg.msg}}</div>
+                    </div>
+                </div>             
+               
+            </div>            
+            <div class="row nopadding textboxarea">
+                <div class="col-md-9 col-sm-9 col-8 nopadding sendTextDiv">
+                    <!-- aa -->
+                    <input type="text" #msg name="message" class="form-control textbox">
+                </div>
+                <div class="col-md-3 col-sm-3 col-4 nopadding sendButtonDiv">
+                    <!-- bb -->
+                    <!-- <button class="sendbutton" ng-click="submitMsg()"><i class="far fa-paper-plane"></i></button> -->
+                    <button class="sendbutton" (click)="submitMsg(msg.value)"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

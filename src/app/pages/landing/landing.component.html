@@ -1,0 +1,14 @@
+<p class="test">
+  landing works!
+</p>
+
+<p>
+  Current user's name:  {{userName}}
+</p>
+
+<p *ngIf="isSignedIn">
+  You are signed in!
+  <button (click)="signOut()">Click to Sign Out</button>
+  Sign In now!
+  <button (click)="signIn()">Sign In</button>
+</p>
